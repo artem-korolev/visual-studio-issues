@@ -8,9 +8,15 @@
       "inheritEnvironments": [ "msvc_x64_x64" ],
       "buildRoot": "${projectDir}\\out\\build\\${name}",
       "installRoot": "${projectDir}\\out\\install\\${name}",
-      "cmakeCommandArgs": "",
+      "cmakeCommandArgs": "-DOPENSSL_ROOT_DIR=${env.CMAKE_TOOLCHAIN_INSTALLED_ROOT}",
       "buildCommandArgs": "-v",
-      "ctestCommandArgs": ""
+      "ctestCommandArgs": "",
+      "variables": [
+        {
+          "name": "CMAKE_TOOLCHAIN_FILE",
+          "value": "${env.CMAKE_TOOLCHAIN_FILE}"
+        }
+      ]
     },
     {
       "name": "x64-Release",
@@ -19,9 +25,15 @@
       "inheritEnvironments": [ "msvc_x64_x64" ],
       "buildRoot": "${projectDir}\\out\\build\\${name}",
       "installRoot": "${projectDir}\\out\\install\\${name}",
-      "cmakeCommandArgs": "",
+      "cmakeCommandArgs": "-DOPENSSL_ROOT_DIR=${env.CMAKE_TOOLCHAIN_INSTALLED_ROOT}",
       "buildCommandArgs": "-v",
-      "ctestCommandArgs": ""
+      "ctestCommandArgs": "",
+      "variables": [
+        {
+          "name": "CMAKE_TOOLCHAIN_FILE",
+          "value": "${env.CMAKE_TOOLCHAIN_FILE}"
+        }
+      ]
     }
   ]
 }
