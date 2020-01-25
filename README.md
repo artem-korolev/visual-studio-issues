@@ -50,4 +50,3 @@ Sometimes you want to remove **out\build** and bootstrap CMake build directory f
 
 Visual Studio CMake Targets View (in Solution Explorer use Switch Views button) have
 commands in contextual menu for CMake projects: **Delete Cache** and **Generate Cache**
- 
