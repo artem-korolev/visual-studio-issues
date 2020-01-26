@@ -183,7 +183,7 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="test.cpp" />
+    <ClCompile Include="test-server.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\main\ApiCppStatic\ApiCppStatic.vcxproj">

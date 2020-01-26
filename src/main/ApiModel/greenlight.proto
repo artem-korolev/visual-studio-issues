@@ -19,22 +19,24 @@ option java_package = "io.grpc.examples.helloworld";
 option java_outer_classname = "HelloWorldProto";
 option objc_class_prefix = "HLW";
 
-package helloworld;
+package GreenLight;
 
 // The greeting service definition.
-service Greeter {
+service LoginService {
   // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloReply) {}
+  rpc SignUp (SignUpForm) returns (Session) {}
+  rpc Login (SignUpForm) returns (Session) {}
 }
 
-// The request message containing the user's name.
-message HelloRequest {
-  string name = 1;
-  string lastName = 2;
+// The request message containing sign up data
+message SignUpForm {
+  string email = 1;
+  string password = 2;
+  string firstName = 3;
+  string lastName = 4;
 }
 
-// The response message containing the greetings
-message HelloReply {
-  string message = 1;
-  string errorCode = 2;
+// The response message containing user session
+message Session {
+  string session = 1;
 }
