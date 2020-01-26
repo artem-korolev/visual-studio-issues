@@ -15,7 +15,7 @@ using grpc::ServerContext;
 using grpc::Status;
 using GreenLight::SignUpForm;
 using GreenLight::Session;
-using GreenLight::LoginService;
+using GreenLight::SignUpService;
 
 std::string random_string(size_t length)
 {
@@ -34,7 +34,7 @@ std::string random_string(size_t length)
 }
 
 // Logic and data behind the server's behavior.
-class GreeterServiceImpl final : public LoginService::Service {
+class GreeterServiceImpl final : public SignUpService::Service {
 	int messageCounter = 0;
 
 

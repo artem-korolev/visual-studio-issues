@@ -22,7 +22,7 @@ option objc_class_prefix = "HLW";
 package GreenLight;
 
 // The greeting service definition.
-service LoginService {
+service SignUpService {
   // Sends a greeting
   rpc SignUp (SignUpForm) returns (Session) {}
   rpc Login (SignUpForm) returns (Session) {}

@@ -29,12 +29,12 @@ using grpc::ClientContext;
 using grpc::Status;
 using GreenLight::SignUpForm;
 using GreenLight::Session;
-using GreenLight::LoginService;
+using GreenLight::SignUpService;
 
 class TestClient {
 public:
     TestClient(std::shared_ptr<Channel> channel)
-        : stub_(LoginService::NewStub(channel)) {}
+        : stub_(SignUpService::NewStub(channel)) {}
 
     // Assembles the client's payload, sends it and presents the response back
     // from the server.
@@ -61,7 +61,7 @@ public:
     }
 
 private:
-    std::unique_ptr<LoginService::Stub> stub_;
+    std::unique_ptr<SignUpService::Stub> stub_;
 };
 
 int main(int argc, char** argv) {
