@@ -50,3 +50,13 @@ Sometimes you want to remove **out\build** and bootstrap CMake build directory f
 
 Visual Studio CMake Targets View (in Solution Explorer use Switch Views button) have
 commands in contextual menu for CMake projects: **Delete Cache** and **Generate Cache**
+
+## VCPKG Usage
+
+```
+The package grpc:x86-windows provides CMake targets:
+
+    find_package(gRPC CONFIG REQUIRED)
+    # Note: 9 target(s) were omitted.
+    target_link_libraries(main PRIVATE gRPC::gpr gRPC::upb gRPC::grpc gRPC::grpc++)
+```
