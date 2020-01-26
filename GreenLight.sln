@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ApiCppStatic", "ApiCppStatic\ApiCppStatic.vcxproj", "{0476660B-7D92-4A4B-AA57-35E69D6A5AC0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F5C68D19-D875-4C18-AD75-952EE3822026}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test-client", "test-client\test-client.vcxproj", "{E9283EF0-009A-4850-B641-0ADB192BB2FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -36,9 +40,21 @@ Global
 		{0476660B-7D92-4A4B-AA57-35E69D6A5AC0}.Release|x64.Build.0 = Release|x64
 		{0476660B-7D92-4A4B-AA57-35E69D6A5AC0}.Release|x86.ActiveCfg = Release|Win32
 		{0476660B-7D92-4A4B-AA57-35E69D6A5AC0}.Release|x86.Build.0 = Release|Win32
+		{E9283EF0-009A-4850-B641-0ADB192BB2FD}.Debug|x64.ActiveCfg = Debug|x64
+		{E9283EF0-009A-4850-B641-0ADB192BB2FD}.Debug|x64.Build.0 = Debug|x64
+		{E9283EF0-009A-4850-B641-0ADB192BB2FD}.Debug|x86.ActiveCfg = Debug|Win32
+		{E9283EF0-009A-4850-B641-0ADB192BB2FD}.Debug|x86.Build.0 = Debug|Win32
+		{E9283EF0-009A-4850-B641-0ADB192BB2FD}.Release|x64.ActiveCfg = Release|x64
+		{E9283EF0-009A-4850-B641-0ADB192BB2FD}.Release|x64.Build.0 = Release|x64
+		{E9283EF0-009A-4850-B641-0ADB192BB2FD}.Release|x86.ActiveCfg = Release|Win32
+		{E9283EF0-009A-4850-B641-0ADB192BB2FD}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{68F94317-31A7-472B-9CC1-7C20B64694BE} = {F5C68D19-D875-4C18-AD75-952EE3822026}
+		{E9283EF0-009A-4850-B641-0ADB192BB2FD} = {F5C68D19-D875-4C18-AD75-952EE3822026}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E6356DF0-AB0E-45F2-884B-16F142730587}
