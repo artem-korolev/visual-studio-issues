@@ -3,18 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test-server", "test\test.vcxproj", "{68F94317-31A7-472B-9CC1-7C20B64694BE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test-server", "src\test\test-server\test.vcxproj", "{68F94317-31A7-472B-9CC1-7C20B64694BE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F1C166A5-26FF-44ED-B1E0-9AF321564985}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ApiCppStatic", "ApiCppStatic\ApiCppStatic.vcxproj", "{0476660B-7D92-4A4B-AA57-35E69D6A5AC0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ApiCppStatic", "src\main\ApiCppStatic\ApiCppStatic.vcxproj", "{0476660B-7D92-4A4B-AA57-35E69D6A5AC0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F5C68D19-D875-4C18-AD75-952EE3822026}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test-client", "test-client\test-client.vcxproj", "{E9283EF0-009A-4850-B641-0ADB192BB2FD}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test-client", "src\test\test-client\test-client.vcxproj", "{E9283EF0-009A-4850-B641-0ADB192BB2FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Main", "Main", "{DE77CF55-4F0B-4AE9-A914-BA81EF07B357}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,6 +56,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{68F94317-31A7-472B-9CC1-7C20B64694BE} = {F5C68D19-D875-4C18-AD75-952EE3822026}
+		{0476660B-7D92-4A4B-AA57-35E69D6A5AC0} = {DE77CF55-4F0B-4AE9-A914-BA81EF07B357}
 		{E9283EF0-009A-4850-B641-0ADB192BB2FD} = {F5C68D19-D875-4C18-AD75-952EE3822026}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
