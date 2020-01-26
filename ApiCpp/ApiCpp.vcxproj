@@ -101,6 +101,10 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
     </Link>
+    <PreBuildEvent>
+      <Command>"$(VcpkgRoot)tools\protobuf\protoc.exe" -I=../ApiModel --grpc_out=./generated/ --plugin=protoc-gen-grpc="$(VcpkgRoot)tools\grpc\grpc_cpp_plugin.exe" "../ApiModel/*.proto"
+"$(VcpkgRoot)tools\protobuf\protoc.exe" -I=../ApiModel --cpp_out=./generated/ "../ApiModel/*.proto"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -116,6 +120,10 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
     </Link>
+    <PreBuildEvent>
+      <Command>"$(VcpkgRoot)tools\protobuf\protoc.exe" -I=../ApiModel --grpc_out=./generated/ --plugin=protoc-gen-grpc="$(VcpkgRoot)tools\grpc\grpc_cpp_plugin.exe" "../ApiModel/*.proto"
+"$(VcpkgRoot)tools\protobuf\protoc.exe" -I=../ApiModel --cpp_out=./generated/ "../ApiModel/*.proto"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -131,6 +139,10 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
     </Link>
+    <PreBuildEvent>
+      <Command>"$(VcpkgRoot)tools\protobuf\protoc.exe" -I=../ApiModel --grpc_out=./generated/ --plugin=protoc-gen-grpc="$(VcpkgRoot)tools\grpc\grpc_cpp_plugin.exe" "../ApiModel/*.proto"
+"$(VcpkgRoot)tools\protobuf\protoc.exe" -I=../ApiModel --cpp_out=./generated/ "../ApiModel/*.proto"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -150,9 +162,12 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
     </Link>
+    <PreBuildEvent>
+      <Command>"$(VcpkgRoot)tools\protobuf\protoc.exe" -I=../ApiModel --grpc_out=./generated/ --plugin=protoc-gen-grpc="$(VcpkgRoot)tools\grpc\grpc_cpp_plugin.exe" "../ApiModel/*.proto"
+"$(VcpkgRoot)tools\protobuf\protoc.exe" -I=../ApiModel --cpp_out=./generated/ "../ApiModel/*.proto"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="..\ApiModel\greenlight.proto" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
