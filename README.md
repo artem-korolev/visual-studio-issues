@@ -12,14 +12,9 @@ Tip: Select triple for your project - https://github.com/microsoft/vcpkg/blob/ma
 
 You can get correct path using **"vcpkg integrate install"** command
 
-Set environment variable CMAKE_TOOLCHAIN_INSTALLED_ROOT, which  points to the root
-of all vcpkg installed packages. For example,
-
-```
-CMAKE_TOOLCHAIN_INSTALLED_ROOT=%USERPROFILE%\tools\vcpkg\installed\x64-windows
-```
-
 ## Install dependencies
+
+Projects are configured to use gRPC as static library.
 
 ```
 vcpkg install grpc:x64-windows-static
