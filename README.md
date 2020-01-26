@@ -7,11 +7,8 @@ Install and configure vcpkg. Read fallowing articles
 - https://docs.microsoft.com/en-us/cpp/build/vcpkg?view=vs-2019
 - https://github.com/microsoft/vcpkg/blob/master/docs/examples/installing-and-using-packages.md
 
-Set environment variable CMAKE_TOOLCHAIN_FILE to point to vcpkg cmake toolchain script. For example,
+Tip: Select triple for your project - https://github.com/microsoft/vcpkg/blob/master/docs/users/integration.md#triplet-selection
 
-```
-CMAKE_TOOLCHAIN_FILE=%USERPROFILE%\tools\vcpkg\scripts\buildsystems\vcpkg.cmake
-```
 
 You can get correct path using **"vcpkg integrate install"** command
 
@@ -22,39 +19,32 @@ of all vcpkg installed packages. For example,
 CMAKE_TOOLCHAIN_INSTALLED_ROOT=%USERPROFILE%\tools\vcpkg\installed\x64-windows
 ```
 
-## Fetch dependencies for GrpcHelper project first
+## Install dependencies
 
-```bash
-git clone --recurse-submodules <greenlight-url>
 ```
-
-or
-
-```bash
-git clone <greenlight-url>
-cd <greenlight-dir>
-git submodule update --init --recursive
-```
-or
-
-```bash
-git clone <greenlight-url>
-git submodule update --init
-cd lib/grpc
-git submodule update --init
+vcpkg install grpc:x64-windows-static
 ```
 
 ## Issues during build
 
-Sometimes you want to remove **out\build** and bootstrap CMake build directory from scratch
+- proto_utils.h:52
+```
+Error	C4996	'google::protobuf::MessageLite::ByteSize': Please use ByteSizeLong() instead	**\vcpkg\installed\x86-windows\include\grpcpp\impl\codegen\proto_utils.h	52	
+```
+Problem is that protobuf have deprecated ByteSize in lieu of ByteSizeLong, but grpc library source taken from vcpkg does not uses old deprecated function.
+Better solution will be to ask for fix in grpc. Or find a flag to use deprecated functions.
 
-Visual Studio CMake Targets View (in Solution Explorer use Switch Views button) have
-commands in contextual menu for CMake projects: **Delete Cache** and **Generate Cache**
+**My temp solution**: I just replaces ByteSize with ByteSizeLong in proto_utils.h in the line, which is point on in Error List
 
 ## VCPKG Usage
 
 ```
-The package grpc:x86-windows provides CMake targets:
+The package protobuf:x64-windows-static provides CMake targets:
+
+    find_package(protobuf CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE protobuf::libprotoc protobuf::libprotobuf protobuf::libprotobuf-lite)
+
+The package grpc:x64-windows-static provides CMake targets:
 
     find_package(gRPC CONFIG REQUIRED)
     # Note: 9 target(s) were omitted.

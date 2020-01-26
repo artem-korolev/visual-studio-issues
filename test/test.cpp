@@ -2,10 +2,58 @@
 //
 
 #include <iostream>
+#include <memory>
+#include <string>
 
-int main()
-{
-    std::cout << "Hello World!\n";
+#include <grpcpp/grpcpp.h>
+
+#include "greenlight.grpc.pb.h"
+
+using grpc::Server;
+using grpc::ServerBuilder;
+using grpc::ServerContext;
+using grpc::Status;
+using helloworld::HelloRequest;
+using helloworld::HelloReply;
+using helloworld::Greeter;
+
+// Logic and data behind the server's behavior.
+class GreeterServiceImpl final : public Greeter::Service {
+    int messageCounter = 0;
+    Status SayHello(ServerContext* context, const HelloRequest* request,
+        HelloReply* reply) override {
+        std::string prefix("Hello ");
+        if (messageCounter++ % 1000 == 0) {
+            std::cout << "received message( " << messageCounter << ")" << std::endl;
+        }
+        reply->set_message(prefix + request->name());
+        return Status::OK;
+    }
+};
+
+void RunServer() {
+    std::string server_address("0.0.0.0:50051");
+    GreeterServiceImpl service;
+
+    ServerBuilder builder;
+    // Listen on the given address without any authentication mechanism.
+    builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
+    // Register "service" as the instance through which we'll communicate with
+    // clients. In this case it corresponds to an *synchronous* service.
+    builder.RegisterService(&service);
+    // Finally assemble the server.
+    std::unique_ptr<Server> server(builder.BuildAndStart());
+    std::cout << "Server listening on " << server_address << std::endl;
+
+    // Wait for the server to shutdown. Note that some other thread must be
+    // responsible for shutting down the server for this call to ever return.
+    server->Wait();
+}
+
+int main(int argc, char** argv) {
+    RunServer();
+
+    return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
