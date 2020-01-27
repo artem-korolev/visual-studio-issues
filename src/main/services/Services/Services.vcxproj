@@ -159,6 +159,11 @@
     </ClCompile>
     <ClCompile Include="Services.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ApiCppStatic\ApiCppStatic.vcxproj">
+      <Project>{0476660b-7d92-4a4b-aa57-35e69d6a5ac0}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
